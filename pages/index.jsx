@@ -8,6 +8,8 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const chatboxRef = useRef(null);
 
+  const API = process.env.CHAT_API_URL;
+
   useEffect(() => {
     if (chatboxRef.current) {
       chatboxRef.current.scrollTop = chatboxRef.current.scrollHeight;
@@ -23,7 +25,7 @@ export default function Home() {
     setLoading(true);
 
     try {
-      const res = await fetch(`${process.env.CHAT_API_URL}`, {
+      const res = await fetch(API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: text }),
