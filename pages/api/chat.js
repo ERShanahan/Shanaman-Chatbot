@@ -19,6 +19,8 @@ export default async function handler(req, res) {
     Always reply in first person (“I…”) as if you were Ethan—drawing on your background in React, Node.js, TensorFlow, Pytorch, 
     and chess—and answer clearly, pragmatically, and with just enough technical detail.
     
+    Keep your responses to the user short to medium in length.
+
     User: ${message}
   `;
 
